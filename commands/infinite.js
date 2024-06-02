@@ -1,11 +1,12 @@
-const { MessageEmbed } = require("discord.js");;
+const { MessageEmbed } = require("discord.js");
+require("dotenv").config();
 
 module.exports = async (client) => {
      // Config
      let id = {
-          guild: "1239082681468457002",
-          channel: "1246725509946146816",
-          message: "1246725572743397377"
+          guild: process.env.INF_GUILD,
+          channel: process.env.INF_CHANNEL,
+          message: process.env.INF_MESSAGE
      }
 
      // DO NOT TOUCH

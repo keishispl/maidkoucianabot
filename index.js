@@ -3,6 +3,7 @@ const fs = require("fs");
 const express = require("express");
 const { Client } = require("discord.js");
 const app = express();
+require('dotenv').config();
 
 // Listen
 app.get("/", (res) => {
@@ -32,12 +33,8 @@ const client = new Client({ intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES
 
 // Config
 
-// VSKouciana
-//let legacy = "vsk"
-//let token = "MTEwNzIwMjI2ODczNTk5NTk4NA.G3fl2x._A1LW4V-X2TtxOp5jaesMvwd-a-4BPFJgE71zA"
-// MaidKouciana
 let legacy = "mk"
-let token = "MTA4MzA5NDQ1Mjc5MDM3NDQ2NQ.G4FRRz.AnAHKYFZfBMeYHOrgp5T48fF4s9WXBzGvDLFtw"
+let token = process.env.TOKEN
 
 require('./commands/activities.js')(client, legacy)
 require('./commands/handler.js')(client, legacy)
