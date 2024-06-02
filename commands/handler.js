@@ -4,7 +4,6 @@ const { Client, Collection, MessageEmbed } = require("discord.js");
 const app = express();
 
 module.exports = async (client, legacy) => {
-
   // Slash Commands
   client.commands = new Collection();
   const db = require('quick.db')

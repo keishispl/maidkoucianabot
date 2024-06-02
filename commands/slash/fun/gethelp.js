@@ -1,4 +1,6 @@
 const { MessageEmbed } = require('discord.js')
+
+
 module.exports.exec = async (client, interaction) => {
      if (interaction.options.getSubcommand() === "advice") {
           fetch('https://api.adviceslip.com/advice')

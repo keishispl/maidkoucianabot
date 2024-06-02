@@ -117,6 +117,8 @@ var reref = {
 
      ' ': ',',
 }
+
+
 module.exports = async (client, message, text) => {
      if (text.toLowerCase().startsWith("kacicode/" || "kc/")) {
           subtext = text.toLowerCase().replace(/kc\/|kacicode\//, '')

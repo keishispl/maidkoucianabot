@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 var { times } = require("../../storage/eightball.json")
 var fs = require('fs')
 
+
 module.exports = async (client, message, text) => {
   if (text.toLowerCase().startsWith(`8b` || `8ball` || `eightball`)) {
     subtext = text.toLowerCase().replace(/8b|8ball|eightball/, '')

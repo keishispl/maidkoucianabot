@@ -1,4 +1,6 @@
 const { MessageEmbed } = require('discord.js')
+
+
 module.exports.exec = async (client, interaction) => {
   if (interaction.options.getSubcommandGroup() === "schedule") {
     fetch('https://splatoon3.ink/data/schedules.json')

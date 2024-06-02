@@ -117,6 +117,8 @@ var reref = {
 
      ' ': ',',
 }
+
+
 module.exports.exec = async (client, interaction) => {
      if (interaction.options.getSubcommand() === "translate") {
           subtext = interaction.options.getString("input")

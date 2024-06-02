@@ -1,5 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 
+
 module.exports = async (client, message, text) => {
      if (text.toLowerCase().startsWith(`gethelp` || `gh`)) {
           subtext = text.toLowerCase().replace(/gethelp|gh/, '')

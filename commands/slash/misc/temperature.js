@@ -1,4 +1,6 @@
 const { MessageEmbed } = require("discord.js");
+
+
 module.exports.exec = async (client, interaction) => {
      var temperatureFormat = interaction.options.getString("type")
      var temperatureNumber = interaction.options.getNumber("temperature")

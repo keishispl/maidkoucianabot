@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 var { times } = require("../../storage/eightball.json")
 var fs = require('fs')
 
+
 module.exports.exec = async (client, interaction) => {
   if (interaction.options.getSubcommand() === "ratio") {
     times += 1

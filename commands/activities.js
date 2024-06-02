@@ -1,4 +1,5 @@
 module.exports = async (client, prefix) => {
+  
   // Activities
   client.on("ready", () => {
     console.log(`\x1b[32mLOADED BOT STATUS!\x1b[0m`)

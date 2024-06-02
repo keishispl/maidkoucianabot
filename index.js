@@ -5,7 +5,6 @@ const { Client } = require("discord.js");
 const app = express();
 require('dotenv').config();
 
-// Listen
 app.get("/", (res) => {
   res.send("Express App");
 });

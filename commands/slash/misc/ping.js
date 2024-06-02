@@ -1,4 +1,6 @@
 const { MessageEmbed } = require('discord.js')
+
+
 module.exports.exec = async (client, interaction) => {
   let memory = `${process.memoryUsage().heapUsed / 1024 / 1024}`
   memory = memory.split(".")[0]

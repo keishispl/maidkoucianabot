@@ -1,4 +1,6 @@
 const { MessageEmbed } = require("discord.js");
+
+
 module.exports = async (client, message, text) => {
      if (text.toLowerCase().startsWith(`rng/`)) {
           subtext = text.toLowerCase().replace(/rng\//, '')

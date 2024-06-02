@@ -1,4 +1,6 @@
 const { MessageEmbed } = require("discord.js");
+
+
 module.exports.exec = async (client, interaction) => {
      var min = interaction.options.getNumber("min")
      var max = interaction.options.getNumber("max")

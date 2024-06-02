@@ -1,7 +1,7 @@
 {
-  "name": "alpha",
-  "version": "1.3.0",
-  "description": "An alpha bot for MaidKoucina",
+  "name": "maidkouciana",
+  "version": "2.0.0",
+  "description": "MaidKouciana",
   "main": "index.js",
   "scripts": {
     "test": "ping"

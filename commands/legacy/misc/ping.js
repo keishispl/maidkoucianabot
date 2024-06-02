@@ -1,4 +1,6 @@
 const { MessageEmbed } = require("discord.js");
+
+
 module.exports = async (client, message, text) => {
   if (text.toLowerCase() === `ping`) {
     let memory = `${process.memoryUsage().heapUsed / 1024 / 1024}`
