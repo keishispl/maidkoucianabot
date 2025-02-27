@@ -1,0 +1,30 @@
+{
+  "name": "maidkouciana",
+  "version": "2.0.0",
+  "description": "MaidKouciana",
+  "main": "index.js",
+  "scripts": {
+    "test": "ping"
+  },
+  "author": "Kacey__",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^8.1.0",
+    "canvas": "^2.11.2",
+    "core-library": "^1.0.0",
+    "discord.js": "^13.0.0",
+    "djs-commander": "^0.0.45",
+    "dog-facts": "^1.0.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "factful.js": "^1.2.8",
+    "moment": "^2.29.4",
+    "mongoose": "^7.4.4",
+    "nekos.life": "^3.0.0",
+    "panda-facts": "^1.0.3",
+    "path": "^0.12.7",
+    "promise-mysql": "^5.2.0",
+    "quick.db": "^9.0.8",
+    "superagent": "^8.0.9"
+  }
+}
