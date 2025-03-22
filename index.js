@@ -4,14 +4,15 @@ const express = require("express");
 const { Client } = require("discord.js");
 const app = express();
 require('dotenv').config();
+const { colorText, seperateText } = require("./commands/colorText.js");
 
 app.get("/", (res) => {
   res.send("Express App");
 });
 app
   .listen(9696, () => {
-    console.log(`========================================`)
-    console.log("\x1b[35mEating breakfast.. mmh\x1b[0m");
+    console.log(seperateText())
+    console.log(colorText("Eating breakfast.. mmh", "purple"));
   })
   .on("error", function () {
     process.once("SIGUSR2", function () {

@@ -2,20 +2,21 @@ const fs = require("fs");
 const express = require("express");
 const { Client, Collection, MessageEmbed } = require("discord.js");
 const app = express();
+const { colorText, seperateText } = require("./colorText.js");
 
 module.exports = async (client, legacy) => {
-  console.log(`\x1b[36mWaking up from my sleep.. >.<\x1b[0m`)
+  console.log(colorText("Waking up from my sleep.. >.<", "aqua"))
 
-  
-  // Legacy Commands
-  console.log(`========================================`)
-  console.log(`\x1b[33mFunctions.. :>\x1b[0m`)
+
+  // Function Commands
+  console.log(seperateText())
+  console.log(colorText("Functions.. :>", "yellow"))
   const functionFiles = fs
     .readdirSync(`./commands/functions`)
     .filter((file) => file.endsWith('.js'));
   for (const file of functionFiles) {
     const command = require(`./functions/${file}`);
-    console.log(`\x1b[31m-> \x1b[0m${file.split(".")[0]}`)
+    console.log(colorText("->", "red") + ` ${file.split(".")[0]}`)
   }
   const functionFilesFolder = fs
     .readdirSync('./commands/functions')
@@ -25,20 +26,20 @@ module.exports = async (client, legacy) => {
       .readdirSync(`./commands/functions/${folder}`)
       .filter((file) => file.endsWith('.js'));
     console.log('')
-    console.log(`\x1b[31m| \x1b[0m${folder}`)
+    console.log(colorText("|", "red") + ` ${folder}`)
     for (const file of functionFiles) {
       const command = require(`./functions/${folder}/${file}`);
-      console.log(`\x1b[31m|-> \x1b[0m${file.split(".")[0]}`)
+      console.log(colorText("|->", "red") + ` ${file.split(".")[0]}`)
     }
   }
-  console.log(`\x1b[32mYay it loaded! :D\x1b[0m`)
+  console.log(colorText("Yay it loaded! :D", "green"))
 
   // Slash Commands
   client.commands = new Collection();
   const db = require('quick.db')
 
   // No Folder Slash Commands
-  console.log(`========================================`)
+  console.log(seperateText())
   console.log(`\x1b[33mSlash commands.. :>\x1b[0m`)
   const outerCommandFiles = fs
     .readdirSync(`./commands/slash`)
@@ -47,7 +48,7 @@ module.exports = async (client, legacy) => {
     const command = require(`./slash/${file}`);
     const slashName = file.split(".")[0];
     client.commands.set(command.help.name, { ...command.help, ...{ exec: command.exec } })
-    console.log(`\x1b[31m-> \x1b[0m${slashName}`)
+    console.log(colorText("->", "red") + ` ${slashName}`)
   }
 
   // Foldered Slash Commands
@@ -57,15 +58,15 @@ module.exports = async (client, legacy) => {
       .readdirSync(`./commands/slash/${folder}`)
       .filter((file) => file.endsWith('.js'));
     console.log('')
-    console.log(`\x1b[31m| \x1b[0m${folder}`)
+    console.log(colorText("|", "red") + ` ${folder}`)
     for (const file of commandFiles) {
       const command = require(`./slash/${folder}/${file}`);
       const slashName = file.split(".")[0];
       client.commands.set(command.help.name, { ...command.help, ...{ exec: command.exec } })
-      console.log(`\x1b[31m|-> \x1b[0m${slashName}`)
+      console.log(colorText("|->", "red") + ` ${slashName}`)
     }
   }
-  console.log(`\x1b[32mYay it loaded! :D\x1b[0m`)
+  console.log(colorText("Yay it loaded! :D", "green"))
 
   // Register Slash Commands
   client.on("interactionCreate", async (interaction) => {
@@ -104,14 +105,14 @@ module.exports = async (client, legacy) => {
   })
 
   // Legacy Commands
-  console.log(`========================================`)
+  console.log(seperateText())
   console.log(`\x1b[33mLegacy commands.. :>\x1b[0m`)
   const legacyFiles = fs
     .readdirSync(`./commands/legacy`)
     .filter((file) => file.endsWith('.js'));
   for (const file of legacyFiles) {
     const command = require(`./legacy/${file}`);
-    console.log(`\x1b[31m-> \x1b[0m${file.split(".")[0]}`)
+    console.log(colorText("->", "red") + ` ${file.split(".")[0]}`)
   }
   const legacyFilesFolder = fs
     .readdirSync('./commands/legacy')
@@ -121,13 +122,13 @@ module.exports = async (client, legacy) => {
       .readdirSync(`./commands/legacy/${folder}`)
       .filter((file) => file.endsWith('.js'));
     console.log('')
-    console.log(`\x1b[31m| \x1b[0m${folder}`)
+    console.log(colorText("|", "red") + ` ${folder}`)
     for (const file of legacyFiles) {
       const command = require(`./legacy/${folder}/${file}`);
-      console.log(`\x1b[31m|-> \x1b[0m${file.split(".")[0]}`)
+      console.log(colorText("|->", "red") + ` ${file.split(".")[0]}`)
     }
   }
-  console.log(`\x1b[32mYay it loaded! :D\x1b[0m`)
+  console.log(colorText("Yay it loaded! :D", "green"))
   client.on('message', message => {
     let prefix = legacy
     if (message.author.id === client.user.id) return
@@ -155,7 +156,7 @@ module.exports = async (client, legacy) => {
   })
 
   // Splatoon Rotations
-  console.log(`\x1b[32mBooting up Nintendo Switch! So fun.. :D\x1b[0m`)
+  console.log(colorText("Booting up Nintendo Switch! So fun.. :D", "green"))
   client.on("ready", () => {
     require("./infinite.js")(client)
     setInterval(() => {

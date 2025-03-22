@@ -1,11 +1,13 @@
+const { colorText, seperateText } = require("./colorText.js"); 
+
 module.exports = async (client, prefix) => {
   
   // Activities
   client.on("ready", () => {
-    console.log(`\x1b[32mLemme SNS my friends rq!\x1b[0m`)
-    console.log(`========================================`)
-    console.log(`\x1b[36mReady for work! ^^\x1b[0m`);
-    console.log(`\x1b[36m${client.user.username } is ready for anything! :)\x1b[0m`);
+    console.log(colorText("Lemme SNS my friends rq!", "green"))
+    console.log(seperateText())
+    console.log(colorText("Ready for work! ^^", "aqua"));
+    console.log(colorText(`${client.user.username} is ready for anything! :)`, "aqua"));
     const activities = [
       { name: `with ${prefix}.help`, type: "PLAYING" },
       { name: "with /help", type: "PLAYING" },
